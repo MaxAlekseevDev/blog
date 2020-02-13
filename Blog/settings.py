@@ -25,8 +25,8 @@ SECRET_KEY = '#qn3(%7#)t0g^*+5n_lm&d!jt4=-d%a^#%suaty*qg&t+syw0c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -114,9 +114,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
-
 STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] #static files for develop
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# if need to production
+# try:
+#     from local_settings import *
+# except ImportError:
+#     pass
