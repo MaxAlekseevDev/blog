@@ -5,8 +5,7 @@ from Posts.models import *
 class PostAdmin(admin.ModelAdmin):
     list_display  = ['title', 'slug','pub_date', 'tags']
     search_fields = ['title', 'description', 'author']
-    filter_horizontal = ['author']
-    list_filter = ['author', 'title']
+    date_hierarchy = 'pub_date'
     raw_id_fields = ('author', 'category')
     prepopulated_fields = {'slug': ('title',)}
 
