@@ -1,3 +1,14 @@
 from django.contrib import admin
+from Posts.models import *
 
-# Register your models here.
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display  = []
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    pass
