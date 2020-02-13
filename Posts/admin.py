@@ -3,12 +3,18 @@ from Posts.models import *
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display  = []
+    list_display  = ['title', 'slug','pub_date', 'tags']
+    search_fields = ['title', 'description', 'author']
+    filter_horizontal = ['author']
+    list_filter = ['author', 'title']
+    raw_id_fields = ('author', 'category')
+    prepopulated_fields = {'slug': ('title',)}
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['title', 'slug', 'description']
+    prepopulated_fields = {'slug': ('title',)}
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['last_name', 'first_name','email', 'is_auth', 'roles']
