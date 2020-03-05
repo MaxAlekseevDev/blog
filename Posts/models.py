@@ -43,3 +43,9 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+
+class Subcategory(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.CharField(max_length=255)
+    description = models.TextField()
+    category_id = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category')
