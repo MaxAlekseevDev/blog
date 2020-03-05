@@ -49,3 +49,6 @@ class Subcategory(models.Model):
     slug = models.CharField(max_length=255)
     description = models.TextField()
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category')
+
+    def __str__(self):
+        return f"{self.title}"
