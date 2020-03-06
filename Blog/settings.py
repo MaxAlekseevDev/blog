@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Posts',
+    'users',
     'django_registration',
     'social_django',
+    
 ]
 
 MIDDLEWARE = [
@@ -108,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # authentification
 ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_OPEN = True
+REGISTRATION_SALT = 'django'
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',
