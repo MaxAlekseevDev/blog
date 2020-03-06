@@ -113,6 +113,13 @@ ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_OPEN = True
 REGISTRATION_SALT = 'django'
 
+#email
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'alekseevmaks@gmail.com'
+EMAIL_HOST_PASSWORD = 'sophussumbiot12'
+EMAIL_PORT = 587
+
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
