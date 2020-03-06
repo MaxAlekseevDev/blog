@@ -112,13 +112,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_OPEN = True
 REGISTRATION_SALT = 'django'
-
-#email
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'alekseevmaks@gmail.com'
-EMAIL_HOST_PASSWORD = 'sophussumbiot12'
-EMAIL_PORT = 587
+LOGIN_REDIRECT_URL = '/posts/' 
+LOGIN_URL = '/users/login/'
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',
@@ -150,7 +145,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # if need to production
-# try:
-#     from local_settings import *
-# except ImportError:
-#     pass
+try:
+    from local_settings import *
+except ImportError:
+    pass

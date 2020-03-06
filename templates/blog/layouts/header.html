@@ -428,6 +428,19 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="tech-contact.html">Contact Us</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'users:django_registration_register' %}">Registration</a>
+                            </li>
+                            {% if user.is_active %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'users:logout' %}">LogOut</a>
+                            </li>
+                            <span class='nav-link' style="color:black">{{ user.username }}</span>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'users:login' %}">Login</a>
+                            </li>
+                            {% endif %}
                         </ul>
                         <ul class="navbar-nav mr-2">
                             <li class="nav-item">

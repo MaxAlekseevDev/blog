@@ -10,9 +10,6 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=255)
     avatar = models.ImageField(upload_to="avatars/")
 
-    def __str__(self):
-        return f"{self.user.username}"
-
 @receiver(post_save, sender = User)
 def create_profile_from_user(sender, instance, created,**kwargs):
     if created:
